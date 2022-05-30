@@ -1,3 +1,5 @@
+import 'package:fitnes_app/utils/theme/theme_color.dart';
+import 'package:fitnes_app/utils/theme/theme_text_style.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:fitnes_app/view/profil_set_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -125,7 +127,7 @@ class _ProfileDashboardState extends State<ProfileDashboard> {
                             ),
                           ),
                         ),
-                        InkWell(
+                        GestureDetector(
                           onTap: () {
                             print("Edit");
                           },
@@ -136,25 +138,14 @@ class _ProfileDashboardState extends State<ProfileDashboard> {
                             width: 85,
                             height: 30,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(99),
-                              gradient: LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                                colors: <Color>[
-                                  Color(0xff9DCEFF),
-                                  Color(0xff92A3FD),
-                                ],
-                              ),
-                            ),
+                                borderRadius: BorderRadius.circular(99),
+                                gradient: ThemeColor.blueLinear),
                             child: Center(
-                              child: Text(
-                                "Edit",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
+                              child: Text("Edit",
+                                  style: ThemeTextStyle.poppinsRegular.copyWith(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14,
+                                      color: Colors.white)),
                             ),
                           ),
                         ),

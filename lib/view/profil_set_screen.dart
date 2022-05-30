@@ -1,3 +1,4 @@
+import 'package:fitnes_app/utils/theme/theme_color.dart';
 import 'package:fitnes_app/view/bottomnavbar.dart';
 import 'package:fitnes_app/view/dashboard.dart';
 import 'package:flutter/material.dart';
@@ -173,16 +174,8 @@ class _ProfilePageState extends State<ProfilePage> {
                         width: 50,
                         height: 50,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(14),
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: <Color>[
-                              Color(0xffC58BF2),
-                              Color(0xffEEA4CE),
-                            ],
-                          ),
-                        ),
+                            borderRadius: BorderRadius.circular(14),
+                            gradient: ThemeColor.purpleLinear),
                         child: Center(
                           child: Text(
                             "KG",
@@ -307,24 +300,17 @@ class _ProfilePageState extends State<ProfilePage> {
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.25),
-                            spreadRadius: 0,
-                            blurRadius: 10,
-                            offset: Offset(0, 7), // changes position of shadow
-                          ),
-                        ],
-                        borderRadius: BorderRadius.circular(90),
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: <Color>[
-                            Color(0xff9DCEFF),
-                            Color(0xff92A3FD),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.25),
+                              spreadRadius: 0,
+                              blurRadius: 10,
+                              offset:
+                                  Offset(0, 7), // changes position of shadow
+                            ),
                           ],
-                        ),
-                      ),
+                          borderRadius: BorderRadius.circular(90),
+                          gradient: ThemeColor.blueLinear),
                       width: 315,
                       height: 60,
                       child: Center(

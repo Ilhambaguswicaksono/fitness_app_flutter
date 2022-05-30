@@ -1,3 +1,4 @@
+import 'package:fitnes_app/utils/theme/theme_color.dart';
 import 'package:fitnes_app/view/dashboard.dart';
 import 'package:fitnes_app/view/profil_set_screen.dart';
 import 'package:fitnes_app/view/welcome_screen.dart';
@@ -33,21 +34,26 @@ class _BottomNavBarState extends State<BottomNavBar> {
             onPressed: () {
               print('search');
             },
-            child: Icon(
-              IconlyLight.search,
-              color: Colors.white,
-              size: 20,
+            child: Container(
+              padding: const EdgeInsets.all(20),
+              decoration: const BoxDecoration(
+                gradient: ThemeColor.blueLinear,
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(
+                IconlyLight.search,
+                color: Colors.white,
+                size: 20,
+              ),
             ),
-            backgroundColor: Color(0xff92A3FD),
             elevation: 5,
-            splashColor: Colors.grey,
           ),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: Container(
         height: 55,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(15),
@@ -57,26 +63,24 @@ class _BottomNavBarState extends State<BottomNavBar> {
         child: Row(
           children: <Widget>[
             Expanded(
-              child: Container(
-                child: IconButton(
-                  enableFeedback: false,
-                  onPressed: () {
-                    setState(() {
-                      pageIndex = 0;
-                    });
-                  },
-                  icon: pageIndex == 0
-                      ? const ImageIcon(
-                          AssetImage('assets/icons/Home.png'),
-                          color: Color(0xffADA4A5),
-                          size: 35,
-                        )
-                      : const ImageIcon(
-                          AssetImage('assets/icons/Home.png'),
-                          color: Color(0xffADA4A5),
-                          size: 35,
-                        ),
-                ),
+              child: IconButton(
+                enableFeedback: false,
+                onPressed: () {
+                  setState(() {
+                    pageIndex = 0;
+                  });
+                },
+                icon: pageIndex == 0
+                    ? const ImageIcon(
+                        AssetImage('assets/icons/Home.png'),
+                        color: Color(0xffADA4A5),
+                        size: 35,
+                      )
+                    : const ImageIcon(
+                        AssetImage('assets/icons/Home.png'),
+                        color: Color(0xffADA4A5),
+                        size: 35,
+                      ),
               ),
             ),
             // Expanded(
